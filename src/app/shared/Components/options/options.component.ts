@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { OptionModel } from './shared/option.model';
 import { OptionService } from './shared/OptionsService.service';
 
@@ -8,16 +8,19 @@ import { OptionService } from './shared/OptionsService.service';
   styleUrls: ['./options.component.sass']
 })
 export class OptionsComponent implements OnInit {
-  options: OptionModel[] =[];
-  selectedOption: OptionModel = new OptionModel('read ts', true) ;
-
+  optionsList: OptionModel[] = [{name: 'Macarena ', isImportant: true},{name: 'Look for more examples', isImportant: true} ]
   constructor(private service: OptionService) { }
-
-  ngOnInit(): void {
-  this.options =this.service.getOptions();
+  ngOnInit() {
   }
-  selectOption(option:OptionModel){
+  option: OptionModel ={name: 'Macarena ', isImportant: true}
+  addNewOption(nuevoDato:OptionModel){
+    this.optionsList =  [...this.optionsList, nuevoDato]
+    console.log("optionList", this.optionsList);
+    console.log("optionList despues push", this.optionsList);
+  
+  }
+  selectedOption?: OptionModel;
+  onSelect(option:OptionModel): void {
     this.selectedOption = option;
   }
-
 }

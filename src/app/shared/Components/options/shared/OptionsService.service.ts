@@ -4,14 +4,14 @@ import { Logger } from "src/app/shared/services/Logger.service";
 
 @Injectable({ providedIn: 'root'})
 export class OptionService {
-    options: OptionModel[] = [];
-    constructor( public loogger:Logger){}
+    optionsList: OptionModel[] = [];
+    constructor( ){}
+    
     addOption(option:OptionModel){
-        this.options = [...this.options, option];
-        this.loogger.log(this.options);
+        this.optionsList = [...this.optionsList, option];
+        console.log("donde veo optionsList", this.optionsList);
     }
     getOptions() {
-        this.loogger.log(this.options)
-        return this.options;
+        return this.optionsList;
     }
 }

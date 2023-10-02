@@ -1,5 +1,14 @@
 <h2>Tasks</h2>
-<div *ngFor="let option of options">
-    {{option.name}}
+<div> 
+  
+<app-add-option [option]="optionsList" (newOptionEvent)="addNewOption($event)"></app-add-option> 
+<ul > 
+  <li  *ngFor="let option of optionsList" > {{option.name}} <span>is Important?</span> {{option.isImportant}} 
+    <!-- <button [class.selected]="option === selectedOption" type="button" (click)="onSelect(option)">
+      {{option.name}}
+      {{option.isImportant}}
+    </button> -->
+  </li> 
+</ul>
+   <!--  <option-detail [option]="selectedOption"></option-detail> -->
 </div>
-<option-detail></option-detail>

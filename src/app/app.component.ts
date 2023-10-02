@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OptionModel } from './shared/Components/options/shared/option.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'indecision-app';
-}
+  options: OptionModel[] = [];
+  agregarDato(dato:OptionModel)
+{
+  this.options.push(dato);
+}}

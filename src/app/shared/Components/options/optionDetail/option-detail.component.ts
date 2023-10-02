@@ -1,20 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { OptionModel } from '../shared/option.model';
-
 @Component({
     selector: 'option-detail',
-    template: ` <div *ngIf="option">
-    <h2>Selected todo:</h2>
-    <div >{{option.name}}</div>
-    <div>{{option.isImportant}}</div>
-</div>`,
+    templateUrl:'./option-detail.html',
    styleUrls: ['./option-detail.component.sass']
 
   })
   export class OptionDetailComponent {
-    @Input()
-    option!: OptionModel;
-
-        constructor () {}
+    @Input() option?: OptionModel[];
+    /*  @Output() deleteOptionEvent = new EventEmitter<OptionModel>(); */
+    constructor() {}
+    
+    ngOnInit() {
     }
-  
+
+}
