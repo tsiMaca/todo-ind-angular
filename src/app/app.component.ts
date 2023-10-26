@@ -10,6 +10,12 @@ export class AppComponent {
   title = 'indecision-app';
   options: OptionModel[] = [];
   agregarDato(dato:OptionModel)
-{
-  this.options.push(dato);
-}}
+  {
+    this.options.push(dato);
+}
+send(options: OptionModel[]){
+  this.options = options;
+  console.log("cuando mando", options);
+}
+
+}

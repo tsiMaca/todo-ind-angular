@@ -5,7 +5,7 @@ import { OptionService } from '../options/shared/OptionsService.service';
 @Component({
   selector: 'app-add-option',
   templateUrl: './add-option.component.html',
-  styleUrls: ['./add-option.component.sass']
+  styleUrls: ['./add-option.component.scss']
 })
 export class AddOptionComponent {
   @Input()
@@ -22,8 +22,6 @@ export class AddOptionComponent {
       this.newOptionEvent.emit(nuevoDato);
       this.name = ''; // Limpia los campos después de agregarlos
       this.isImportant = false;
-      console.log("de tipo optionmodel", nuevoDato);
-      console.log("esta es la option", this.newOptionEvent)
       
   }
 }
